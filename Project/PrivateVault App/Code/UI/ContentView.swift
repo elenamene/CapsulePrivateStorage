@@ -11,7 +11,7 @@ struct ContentView: View {
 	@Environment(\.scenePhase) private var scenePhase
 	@EnvironmentObject private var settings: UserSettings
 	@EnvironmentObject private var passcodeManager: PasscodeManager
-	@State var isLocked = true
+	@State var isLocked = !demoSkipPasscode
 
 	var body: some View {
 		if !passcodeManager.passcodeSet {
